@@ -12,12 +12,15 @@ OPTION(USE_GPU "Enable GPU-accelerated training" OFF)
 OPTION(USE_SWIG "Enable SWIG to generate Java API" OFF)
 OPTION(USE_HDFS "Enable HDFS support (EXPERIMENTAL)" OFF)
 OPTION(USE_R35 "Set to ON if your R version is not earlier than 3.5" OFF)
-OPTION(USE_TIMETAG "Set to ON to output time costs" OFF)
-OPTION(USE_DEBUG "Set to ON for Debug mode" OFF)
+OPTION(USE_TIMETAG "Set to ON to output time costs" ON)
+OPTION(USE_DEBUG "Set to ON for Debug mode" ON)
 OPTION(BUILD_FOR_R "Set to ON if building lib_lightgbm for use with the R package" OFF)
 
 if(APPLE)
-    OPTION(APPLE_OUTPUT_DYLIB "Output dylib shared library" OFF)
+    OPTION(APPLE_OUTPUT_DYLIB "Output dylib shared library" ON)
+    message(APPLE_OUTPUT_DYLIB "Output dylib shared library")
+    message(APPLE)
+
 endif(APPLE)
 
 if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
